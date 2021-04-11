@@ -1,0 +1,73 @@
+<template>
+  <!-- nav -->
+  <nav class="navbar navbar-expand navbar-light navbar-white">
+    <div class="container">
+      <router-link to="/admin/statistic" href="/" class="navbar-brand d-flex">
+        <img src="@/assets/img/logo.png" alt="Logo" class="brand-image" />
+        <h4>SuperCinema</h4>
+      </router-link>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <router-link tag="li" to="/admin/statistic" class="nav-item">
+          <a href="#" class="navbar-admin">
+            <img
+              src="@/assets/img/user.svg"
+              alt="Logo"
+              class="brand-image nav-img"
+            />
+            <span>Администратор</span>
+          </a>
+        </router-link>
+        <router-link tag="li" to="/admin/statistic" class="nav-item">
+          <a href="#" class="navbar-logout">
+            <img
+              src="@/assets/img/logout.svg"
+              alt="Logout"
+              class="nav-img logout"
+            />
+          </a>
+        </router-link>
+      </ul>
+    </div>
+  </nav>
+  <!-- /nav -->
+</template>
+
+<script>
+export default {
+  name: "Header",
+};
+</script>
+
+<style lang="scss" scoped>
+nav {
+  height: 86px;
+  border-bottom: 1px solid #000;
+
+  .brand-image {
+    width: 130px;
+  }
+  h4 {
+    margin: 0;
+    padding: 15px 0 0 10px;
+  }
+}
+.nav-item {
+  margin-left: 25px;
+
+  span {
+    margin-left: 15px;
+    color: #000;
+  }
+}
+.nav-img {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+</style>
