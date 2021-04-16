@@ -10,21 +10,13 @@
       <ul class="navbar-nav ml-auto">
         <router-link tag="li" to="/admin/statistic" class="nav-item">
           <a href="#" class="navbar-admin">
-            <img
-              src="@/assets/img/user.svg"
-              alt="Logo"
-              class="brand-image nav-img"
-            />
+            <i class="nav-img fas fa-user-cog fa-2x"></i>
             <span>Администратор</span>
           </a>
         </router-link>
         <router-link tag="li" to="/admin/statistic" class="nav-item">
           <a href="#" class="navbar-logout">
-            <img
-              src="@/assets/img/logout.svg"
-              alt="Logout"
-              class="nav-img logout"
-            />
+            <i class="nav-img fas fa-power-off fa-2x"></i>
           </a>
         </router-link>
       </ul>
@@ -46,6 +38,11 @@ nav {
 
   .brand-image {
     width: 130px;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
   h4 {
     margin: 0;
@@ -55,19 +52,24 @@ nav {
 .nav-item {
   margin-left: 25px;
 
-  span {
-    margin-left: 15px;
-    color: #000;
-  }
-}
-.nav-img {
-  width: 30px;
-  height: 30px;
-  opacity: 1;
-  transition: opacity 0.2s ease;
+  .navbar-admin {
+    display: flex;
+    align-items: center;
 
-  &:hover {
-    opacity: 0.7;
+    span {
+      margin-left: 15px;
+      color: #000;
+    }
+  }
+
+  .nav-img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    color: #000;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 </style>

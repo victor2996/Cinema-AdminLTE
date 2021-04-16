@@ -16,8 +16,8 @@ export default {
   },
   computed: {
     layout() {
-      return (this.$route.meta.layout || "admin") + "-layout";
-      // return (this.$route.meta.layout || "main") + "-layout";
+      // return (this.$route.meta.layout || "admin") + "-layout";
+      return (this.$route.meta.layout || "main") + "-layout";
     },
   },
 };

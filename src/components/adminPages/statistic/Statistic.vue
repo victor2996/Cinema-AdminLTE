@@ -13,11 +13,7 @@
           <p>User Registrations</p>
         </div>
         <div class="icon">
-          <img
-            src="@/assets/img/user-plus.png"
-            alt="Users"
-            class="brand-image nav-img"
-          />
+          <i class="nav-img fas fa-user-plus fa-2x"></i>
         </div>
       </div>
     </div>
@@ -32,8 +28,6 @@ export default {
 
 <style lang="scss" scoped>
 .nav-img {
-  width: 30px;
-  height: 30px;
   opacity: 1;
   transition: opacity 0.2s ease;
 

@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 // import firebase from "./database";
 import "./registerServiceWorker";
-// import "admin-lte/dist/js/adminlte.min";
+// import "admin-lte/dist/js/adminlte.js";
 
 import firebase from "firebase";
 import "firebase/database";

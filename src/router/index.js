@@ -12,7 +12,20 @@ export default new Router({
       path: "/",
       name: "Home",
       meta: { layout: "main" },
-      component: () => import("@/components/mainPages/Home.vue"),
+      component: () => import("@/components/mainPages/main/Home.vue"),
+    },
+    {
+      path: "/cinema",
+      name: "Cinemas",
+      meta: { layout: "main" },
+      component: () => import("@/components/mainPages/cinema/Cinema.vue"),
+    },
+    {
+      path: "/cinema/:way",
+      name: "CinemaInfo",
+      meta: { layout: "main" },
+      props: true,
+      component: () => import("@/components/mainPages/cinema/CinemaInfo.vue"),
     },
 
     // Admin pages
