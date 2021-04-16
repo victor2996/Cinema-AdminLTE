@@ -12,7 +12,7 @@ export default new Router({
       path: "/",
       name: "Home",
       meta: { layout: "main" },
-      component: () => import("@/components/mainPages/main/Home.vue"),
+      component: () => import("@/components/mainPages/home/Home.vue"),
     },
     {
       path: "/cinema",

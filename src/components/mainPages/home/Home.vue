@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="gallery-slider">
-      <!-- <Slider
+      <Slider
         :gallery="
           moviesData.current[this.moviesData.current.length - 1].galleryImages
         "
-      /> -->
+      />
       <div class="gallery-slider-name">
         <h3>
           {{ moviesData.current[this.moviesData.current.length - 1].name }}
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-// import Slider from "@/components/mainPages/SliderMain.vue";
+import Slider from "@/components/mainPages/home/SliderMain.vue";
 import firebase from "firebase";
 
 export default {
   name: "Home",
-  // components: { Slider },
+  components: { Slider },
   data() {
     return {
       moviesData: {},

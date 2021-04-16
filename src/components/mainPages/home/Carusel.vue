@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import CaruselItem from "@/components/mainPages/main/CaruselItem.vue";
+import CaruselItem from "@/components/mainPages/home/CaruselItem.vue";
 
 export default {
   name: "Carusel",

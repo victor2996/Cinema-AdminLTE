@@ -1,22 +1,21 @@
 <template>
-  <div class="main">
-    <div class="attach">
-      <div class="slider_case">
-        <v-slider v-bind="options">
-          <div class="item" v-for="img in gallery" :key="img.id">
-            <img class="item-img" :src="img.imageUrl" />
-          </div>
-        </v-slider>
+  <div class="slider_case">
+    <v-slider v-bind="options">
+      <div class="item" v-for="img in gallery" :key="img.id">
+        <img class="item-img" :src="img.imageUrl" />
       </div>
-    </div>
+    </v-slider>
   </div>
 </template>
 
 <script>
-import slider from "./slider.vue";
+import Slider from "@/components/mainPages/home/Slider.vue";
 
 export default {
-  name: "main",
+  name: "SliderMain",
+  components: {
+    "v-slider": Slider,
+  },
   props: {
     // Галлерея картинок
     gallery: {
@@ -51,10 +50,6 @@ export default {
       },
     };
   },
-
-  components: {
-    "v-slider": slider,
-  },
 };
 </script>
 
@@ -71,23 +66,18 @@ export default {
   box-sizing: border-box;
 } */
 
-.main {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 14px;
-}
-
-.attach {
+.slider_case {
   width: 100%;
   max-width: 1000px;
   min-width: 480px;
   padding: 50px 15px;
   margin: 0 auto;
   position: relative;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  /* margin-bottom: 40px; */
 }
-/* 
-.slider_case {
-  margin-bottom: 40px;
-} */
 
 .item {
   &-img {

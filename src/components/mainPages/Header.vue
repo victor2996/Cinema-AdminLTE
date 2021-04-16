@@ -123,7 +123,7 @@
 </template>
 
 <script>
-import Carusel from "@/components/mainPages/main/Carusel.vue";
+import Carusel from "@/components/mainPages/home/Carusel.vue";
 import firebase from "firebase";
 
 export default {

@@ -28,7 +28,7 @@
         <div class="gallery">
           <h3>ФОТОГАЛЕРЕЯ</h3>
           <div class="gallery-slider">
-            <!-- <Slider :gallery="data.galleryImages" /> -->
+            <Slider :gallery="data.galleryImages" />
           </div>
         </div>
       </div>
@@ -37,12 +37,12 @@
 </template>
 
 <script>
-// import Slider from "@/components/mainPages/SliderMain.vue";
+import Slider from "@/components/mainPages/home/SliderMain.vue";
 // import firebase from "firebase";
 
 export default {
   name: "Cinema",
-  // components: { Slider },
+  components: { Slider },
   props: ["data"],
   data() {
     return {
