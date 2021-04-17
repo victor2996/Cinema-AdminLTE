@@ -203,7 +203,7 @@ export default {
         .set(newData)
         //   .then((this.$refs.btnSave.textContent = "Сохранено"))
         //   .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin/users"));
+        .then(this.$router.push("/admin-users"));
     },
   },
 
@@ -216,7 +216,7 @@ export default {
         this.userData = {};
       }
     } else if (this.dataArr === undefined) {
-      this.$router.push("/admin/users");
+      this.$router.push("/admin-users");
     }
   },
 };

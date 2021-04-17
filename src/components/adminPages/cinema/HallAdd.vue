@@ -345,7 +345,7 @@ export default {
         }
       }
     } else {
-      this.$router.push("/admin/cinema");
+      this.$router.push("/admin-cinema");
     }
   },
 };

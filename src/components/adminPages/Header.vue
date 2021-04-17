@@ -2,19 +2,19 @@
   <!-- nav -->
   <nav class="navbar navbar-expand navbar-light navbar-white">
     <div class="container">
-      <router-link to="/admin/statistic" href="/" class="navbar-brand d-flex">
+      <router-link to="/" href="/" class="navbar-brand d-flex">
         <img src="@/assets/img/logo.png" alt="Logo" class="brand-image" />
         <h4>SuperCinema</h4>
       </router-link>
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <router-link tag="li" to="/admin/statistic" class="nav-item">
+        <router-link tag="li" to="/admin-statistic" class="nav-item">
           <a href="#" class="navbar-admin">
             <i class="nav-img fas fa-user-cog fa-2x"></i>
             <span>Администратор</span>
           </a>
         </router-link>
-        <router-link tag="li" to="/admin/statistic" class="nav-item">
+        <router-link tag="li" to="/" class="nav-item">
           <a href="#" class="navbar-logout">
             <i class="nav-img fas fa-power-off fa-2x"></i>
           </a>

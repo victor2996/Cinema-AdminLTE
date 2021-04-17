@@ -302,7 +302,7 @@ export default {
         .set(newData)
         .then((this.$refs.btnSave.textContent = "Сохранено"))
         .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin/movies"));
+        .then(this.$router.push("/admin-movies"));
     },
 
     restore() {
@@ -350,7 +350,7 @@ export default {
         // console.log(this.movieData);
       }
     } else {
-      this.$router.push("/admin/movies");
+      this.$router.push("/admin-movies");
     }
   },
 };

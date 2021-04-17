@@ -1,7 +1,7 @@
 <template>
   <div class="header-main">
     <div class="log-in log-out" v-if="this.$route.path == '/'">
-      <router-link tag="button" to="/admin/statistic"> Admin </router-link>
+      <router-link tag="button" to="/admin-statistic"> Admin </router-link>
     </div>
     <div class="banner-top" v-if="this.$route.path == '/'">
       <Carusel :data="banners" :interval="5000" />
@@ -131,7 +131,7 @@ export default {
   components: { Carusel },
   data: () => ({
     links: [
-      { title: "Афиша", url: "/statistic" },
+      { title: "Афиша", url: "/poster" },
       { title: "Расписание", url: "/banners" },
       { title: "Скоро", url: "/movies" },
       { title: "Кинотеатры", url: "/cinema" },

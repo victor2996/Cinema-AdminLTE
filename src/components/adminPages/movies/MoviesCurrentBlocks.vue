@@ -59,6 +59,7 @@ export default {
 
     &-name {
       width: 100%;
+      max-width: 235px;
       text-align: center;
       margin-top: 10px;
       font-size: 1.3em;

@@ -283,7 +283,7 @@ export default {
         .set(newData)
         .then((this.$refs.btnSave.textContent = "Сохранено"))
         .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin/pages"));
+        .then(this.$router.push("/admin-pages"));
     },
   },
 
@@ -297,7 +297,7 @@ export default {
         }
       }
     } else if (this.dataArr === undefined) {
-      this.$router.push("/admin/pages");
+      this.$router.push("/admin-pages");
     }
   },
 };

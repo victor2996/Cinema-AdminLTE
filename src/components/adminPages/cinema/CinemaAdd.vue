@@ -360,7 +360,7 @@ export default {
         .set(newData)
         .then((this.$refs.btnSave.textContent = "Сохранено"))
         .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin/cinema"));
+        .then(this.$router.push("/admin-cinema"));
     },
   },
 

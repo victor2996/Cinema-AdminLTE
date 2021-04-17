@@ -121,7 +121,7 @@ export default {
       const baseRef = firebase.database().ref(this.ref);
       baseRef
         .set(this.mailingsData)
-        .then(this.$router.push("/admin/" + this.ref));
+        .then(this.$router.push("/admin-" + this.ref));
     },
   },
 
@@ -147,7 +147,7 @@ export default {
   },
   created() {
     if (this.usersData === undefined) {
-      this.$router.push("/admin/mailings");
+      this.$router.push("/admin-mailings");
     }
   },
 };

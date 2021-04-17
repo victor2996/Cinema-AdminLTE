@@ -139,7 +139,7 @@ export default {
         .set(this.mainPageData)
         .then((this.$refs.btnSave.textContent = "Сохранено"))
         .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin/pages"));
+        .then(this.$router.push("/admin-pages"));
     },
   },
 
