@@ -310,10 +310,14 @@ export default {
       let day;
       if (date.getDate().toString().length === 1) {
         day = "0" + date.getDate();
+      } else {
+        day = date.getDate();
       }
       let month;
       if (date.getMonth().toString().length === 1) {
         month = "0" + date.getMonth();
+      } else {
+        month = date.getMonth();
       }
       let year = date.getFullYear();
       let dateCreate = `${day}.${month}.${year}`;
@@ -345,7 +349,7 @@ export default {
         }
       }
     } else {
-      this.$router.push("/admin-cinema");
+      this.$router.push("/admin/cinema");
     }
   },
 };

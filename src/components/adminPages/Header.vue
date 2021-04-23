@@ -2,7 +2,7 @@
   <!-- nav -->
   <nav class="navbar navbar-expand navbar-light navbar-white">
     <div class="container">
-      <router-link to="/" href="/" class="navbar-brand d-flex">
+      <router-link to="/" class="navbar-brand d-flex">
         <img src="@/assets/img/logo.png" alt="Logo" class="brand-image" />
         <h4>SuperCinema</h4>
       </router-link>

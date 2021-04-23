@@ -1,10 +1,10 @@
 <template>
   <div class="poster">
-    <div class="trailer">
+    <div class="trailer container">
       <iframe
-        width="720"
-        height="405"
-        :src="movieData.trailer"
+        width="100%"
+        height="640"
+        :src="'https://www.youtube.com/embed/' + movieData.trailer"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

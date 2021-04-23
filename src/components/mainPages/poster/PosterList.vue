@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="info-block">
     <router-link
       class="info-block__image"
       tag="img"
@@ -13,6 +13,8 @@
       }"
     >
     </router-link>
+    <div class="info-block__name">{{ movieData.name }}</div>
+    <button class="info-block__buy btn btn-default">Купить билет</button>
   </div>
 </template>
 
@@ -32,4 +34,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.info-block {
+  max-width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 55px 30px 0;
+
+  &__image {
+    width: 100%;
+    max-width: 170px;
+    height: 230px;
+  }
+  &__name {
+    max-width: 140px;
+    text-align: center;
+  }
+}
 </style>

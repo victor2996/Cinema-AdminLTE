@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Header />
-    <!-- <section class="content-wrapper"> -->
+    <Header v-if="this.$route.path != '/'" style="margin-top: 20px" />
     <router-view />
-    <!-- </section> -->
     <Footer />
   </div>
 </template>
@@ -20,3 +18,4 @@ export default {
   },
 };
 </script>
+

@@ -1,3 +1,10 @@
+// module.exports = {
+//   publicPath: "",
+// };
+
 module.exports = {
-  publicPath: "",
+  productionSourceMap: false,
+  outputDir: "../dist",
+  assetsDir: "static",
+  indexPath: "templates/index.html",
 };

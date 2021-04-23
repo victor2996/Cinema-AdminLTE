@@ -266,7 +266,7 @@ export default {
         .set(this.pageData)
         .then((this.$refs.btnSave.textContent = "Сохранено"))
         .then(this.$refs.btnSave.classList.remove("show"))
-        .then(this.$router.push("/admin-pages"));
+        .then(this.$router.push("/admin/pages"));
     },
   },
 
@@ -277,7 +277,7 @@ export default {
         this.galleryData = this.dataOb.galleryImages;
       }
     } else if (this.dataOb === undefined) {
-      this.$router.push("/admin-pages");
+      this.$router.push("/admin/pages");
     }
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="main-block">
+  <div class="main-block container">
     <PosterList v-for="movie in allMovies" :key="movie.id" :movieData="movie" />
   </div>
 </template>
@@ -15,14 +15,11 @@ export default {
   },
   data() {
     return {
-      moviesData: [],
+      moviesData: {},
     };
   },
   computed: {
     allMovies() {
-      //   console.log(this.moviesData.current);
-      //   console.log(this.moviesData.new);
-      //   console.log(this.moviesData.current.concat(this.moviesData.new));
       return this.moviesData.current.concat(this.moviesData.new);
     },
   },
@@ -33,10 +30,14 @@ export default {
         this.moviesData = snapshot.val();
       }
     });
-    // this.allMovies();
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.main-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 </style>

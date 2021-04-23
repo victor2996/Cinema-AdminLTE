@@ -3,6 +3,7 @@
   <div class="calendar">
     <date-picker
       v-model="calendar"
+      type="date"
       valueType="format"
       format="DD/MM/YYYY"
       @change="$emit('dateChange', calendar)"
