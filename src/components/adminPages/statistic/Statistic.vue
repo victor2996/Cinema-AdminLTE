@@ -8,7 +8,7 @@
       <div class="col-md-4">
         <div class="small-box bg-yellow">
           <div class="inner users-number">
-            <h3>{{ usersData.length - 1 }}</h3>
+            <h3>{{ usersData.length }}</h3>
             <p>User Registrations</p>
           </div>
           <div class="icon">

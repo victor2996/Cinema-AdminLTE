@@ -16,6 +16,7 @@ export default {
   data() {
     return {
       moviesData: {},
+      ticketsData: [],
     };
   },
   computed: {
@@ -24,12 +25,15 @@ export default {
     },
   },
   created() {
-    const baseRef = firebase.database().ref("movies");
-    baseRef.on("value", (snapshot) => {
+    const moviesRef = firebase.database().ref("movies");
+    moviesRef.on("value", (snapshot) => {
       if (snapshot.val() !== null) {
         this.moviesData = snapshot.val();
       }
     });
+    // .then(() => {
+    //   this.allMovies();
+    // });
   },
 };
 </script>

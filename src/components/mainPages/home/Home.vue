@@ -1,7 +1,23 @@
 <template>
   <div class="header-main">
-    <div class="log-in log-out">
-      <router-link tag="button" to="/admin/statistic"> Admin </router-link>
+    <div class="log log-in log-out container">
+      <div class="log-info" v-if="name">
+        <router-link to="/user">
+          <i class="nav-img fas fa-user-cog fa-2x" v-if="admin"></i>
+          <i class="fas fa-user fa-2x" v-else></i>
+        </router-link>
+        <h6>{{ name }}</h6>
+        <i class="fas fa-power-off fa-2x" @click="logout"></i>
+      </div>
+      <router-link class="btn btn-default" to="/login" v-if="!name">
+        Вход
+      </router-link>
+      <router-link class="btn btn-default" to="/registr" v-if="!name">
+        Регистрация
+      </router-link>
+      <router-link class="btn btn-default" to="/admin/statistic" v-if="admin">
+        Админка
+      </router-link>
     </div>
     <div class="banner-top">
       <Carusel :data="banner.topcards" :interval="5000" />
@@ -79,7 +95,30 @@ export default {
       banner: null,
     };
   },
+  methods: {
+    async logout() {
+      await this.$store.dispatch("logout");
+      // this.$router.push("/login");
+    },
+  },
+  computed: {
+    name() {
+      if (this.$store.getters.info) {
+        // console.log(this.$store.getters.info.nickname);
+        return this.$store.getters.info.nickname;
+      } else return null;
+    },
+    admin() {
+      if (this.$store.getters.info) {
+        // console.log(this.$store.getters.info.email);
+        if (this.$store.getters.info.email === "admin@ukr.net") {
+          return true;
+        } else return false;
+      } else return null;
+    },
+  },
 
+  // async created() {
   created() {
     const baseRef = firebase.database().ref("movies");
     baseRef.on("value", (snapshot) => {
@@ -87,12 +126,16 @@ export default {
         this.moviesData = snapshot.val();
       }
     });
+    // this.banner = (
+    //   await firebase.database().ref("banners").once("value")
+    // ).val();
     const bannerRef = firebase.database().ref("banners");
     bannerRef.on("value", (snapshot) => {
       if (snapshot.val() !== null) {
         this.banner = snapshot.val();
       }
     });
+    // console.log(this.$state);
   },
 };
 </script>
@@ -100,6 +143,30 @@ export default {
 <style lang="scss" scoped>
 .header-main {
   margin-bottom: 40px;
+  background: #adadad33;
+
+  .log {
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 51px;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      h6 {
+        margin: 15px 25px;
+      }
+    }
+    i {
+      color: #000000bd;
+      cursor: pointer;
+    }
+    .btn {
+      margin-left: 15px;
+    }
+  }
 
   .banner-top {
     height: 100px;

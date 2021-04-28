@@ -94,6 +94,8 @@
           <DatePicker
             class="birth-title"
             v-model="userData.birth"
+            type="date"
+            format="DD/MM/YYYY"
             :date="userData.birth"
             @dateChange="newDateValue"
           />
@@ -172,7 +174,7 @@ export default {
       ) {
         this.onUpload();
       } else {
-        alert("gfhjkm");
+        alert("Пароли не совпадают");
       }
     },
     onUpload() {
@@ -180,23 +182,28 @@ export default {
         return user.id !== this.userData.id;
       });
 
-      let date = new Date();
-      let day;
-      if (date.getDate().toString().length === 1) {
-        day = "0" + date.getDate();
-      }
-      let month;
-      if (date.getMonth().toString().length === 1) {
-        month = "0" + date.getMonth();
-      }
-      let year = date.getFullYear();
-      let dateCreate = `${day}.${month}.${year}`;
+      // let date = new Date();
+      // let day;
+      // if (date.getDate().toString().length === 1) {
+      //   day = "0" + date.getDate();
+      // } else {
+      //   day = date.getDate();
+      // }
+      // let month;
+      // if (date.getMonth().toString().length === 1) {
+      //   month = "0" + date.getMonth();
+      // } else {
+      //   month = date.getMonth();
+      // }
+      // let year = date.getFullYear();
+      // let dateCreate = `${day}.${month}.${year}`;
 
-      this.userData.id = Math.floor(Math.random() * 100000);
-      this.userData.date = dateCreate;
-      this.userData.mailing = false;
+      // this.userData.id = Math.floor(Math.random() * 100000);
+      // this.userData.date = dateCreate;
+      // this.userData.mailing = false;
+      this.userData.repassword = "";
 
-      newData.push(this.userData);
+      newData.unshift(this.userData);
 
       const baseRef = firebase.database().ref(this.ref);
       baseRef

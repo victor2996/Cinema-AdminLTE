@@ -16,6 +16,11 @@ export default {
     Header,
     Footer,
   },
+  async mounted() {
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
+    }
+  },
 };
 </script>
 

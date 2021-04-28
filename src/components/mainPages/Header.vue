@@ -152,11 +152,11 @@ export default {
       { title: "О кинотеатре", url: "/about" },
     ],
     linksMore: [
-      { title: "Новости", url: "/statistic" },
-      { title: "Реклама", url: "/banners" },
-      { title: "Кафе", url: "/movies" },
-      { title: "Приложения", url: "/cinema" },
-      { title: "Контакты", url: "/shares" },
+      { title: "Новости", url: "/news" },
+      { title: "Реклама", url: "/ad" },
+      { title: "Кафе", url: "/kafe" },
+      { title: "Приложения", url: "/app" },
+      { title: "Контакты", url: "/contacts" },
     ],
 
     dropDowns: {
@@ -178,7 +178,7 @@ export default {
     toggle(dropdownName) {
       //alert(dropdownName)
       this.dropDowns[dropdownName].open = !this.dropDowns[dropdownName].open;
-      console.log(this.$route);
+      // console.log(this.$route);
     },
 
     close() {

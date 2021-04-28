@@ -19,6 +19,8 @@
 </template>
 
 <script>
+// import firebase from "firebase";
+
 export default {
   name: "PosterList",
   props: {
@@ -28,8 +30,18 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      // ticketData: [],
+    };
   },
+  // created() {
+  //   const ticketsRef = firebase.database().ref("tickets");
+  //   ticketsRef.on("value", (snapshot) => {
+  //     if (snapshot.val() !== null) {
+  //       this.ticketsData = snapshot.val();
+  //     }
+  //   });
+  // },
 };
 </script>
 

@@ -3,9 +3,10 @@
   <div class="calendar">
     <date-picker
       v-model="calendar"
-      type="date"
+      :lang="rus"
+      :type="type"
       valueType="format"
-      format="DD/MM/YYYY"
+      :format="format"
       @change="$emit('dateChange', calendar)"
     ></date-picker>
   </div>
@@ -17,7 +18,7 @@ import "vue2-datepicker/scss/index.scss";
 
 export default {
   components: { DatePicker },
-  props: ["date"],
+  props: ["date", "type", "format"],
   data() {
     return {
       calendar: this.date,

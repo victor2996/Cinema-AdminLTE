@@ -19,10 +19,19 @@
         </option>
       </select>
 
+      <select class="filter__item filter__movies" v-model="movie">
+        <option :value="null">-- Фильмы --</option>
+        <option v-for="movie in sortedMovies" :key="movie.id" :value="movie.id">
+          {{ movie.name }}
+        </option>
+      </select>
+
       <DatePicker
         class="filter__item filter__date"
         v-model="date"
         :date="date"
+        type="date"
+        format="DD MMMM"
         @dateChange="newDateValue"
       />
     </div>
@@ -39,7 +48,7 @@
 </template>
 
 <script>
-import DatePicker from "@/components/mainPages/schedule/DatePicker.vue";
+import DatePicker from "@/components/adminPages/DatePicker.vue";
 import PosterList from "@/components/mainPages/poster/PosterList.vue";
 import firebase from "firebase";
 
@@ -69,12 +78,16 @@ export default {
     cinemas() {
       this.hall = null;
     },
+    movie() {
+      this.cinemas = null;
+      this.hall = null;
+    },
   },
   computed: {
     filteredMovies() {
       let sortedMovie = [];
 
-      if (!this.hall) {
+      if (this.cinemas && !this.hall) {
         let movie = this.ticketsData.filter((ticket) => {
           let currentCinema = ticket.cinema.filter((cinema) => {
             return cinema.id === this.cinemas;
@@ -86,7 +99,7 @@ export default {
         sortedMovie = movie.map((ticket) => {
           return ticket.movie;
         });
-      } else if (this.hall) {
+      } else if (this.cinemas && this.hall) {
         let movie = this.ticketsData.filter((ticket) => {
           let currentHall = ticket.hall.filter((hall) => {
             return hall.id === this.hall;
@@ -98,13 +111,19 @@ export default {
         sortedMovie = movie.map((ticket) => {
           return ticket.movie;
         });
+      } else if (this.movie) {
+        let movie = this.ticketsData.filter((ticket) => {
+          return ticket.movie.id === this.movie;
+        });
+        console.log(movie);
+        sortedMovie = movie.map((ticket) => {
+          return ticket.movie;
+        });
       }
-      // console.log(sortedMovie);
-
       return sortedMovie;
     },
     sortedHalls() {
-      let halls = [];
+      let halls;
       if (this.cinemas) {
         let cinema = this.cinemaData.filter((cinema) => {
           return cinema.id === this.cinemas;
@@ -112,6 +131,12 @@ export default {
         halls = cinema[0].hallList;
         return halls;
       } else return halls;
+    },
+    sortedMovies() {
+      let movie = this.ticketsData.map((ticket) => {
+        return ticket.movie;
+      });
+      return movie;
     },
   },
   methods: {

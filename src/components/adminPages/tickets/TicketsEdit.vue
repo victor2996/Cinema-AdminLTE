@@ -54,7 +54,19 @@
         <DatePicker
           class="create__date-title"
           :date="ticket.date"
+          type="date"
+          format="DD MMM"
           @dateChange="newDateValue"
+        />
+      </div>
+      <div class="create__item create__date d-flex">
+        <p>Время</p>
+        <DatePicker
+          class="create__date-title"
+          :date="ticket.time"
+          type="time"
+          format="HH:mm"
+          @dateChange="newTimeValue"
         />
       </div>
       <div class="create__status">
@@ -90,12 +102,14 @@
 
 <script>
 import DatePicker from "@/components/adminPages/DatePicker.vue";
+// import DatePickerTime from "@/components/adminPages/DatePickerTime.vue";
 import firebase from "firebase";
 
 export default {
   name: "TicketsEdit",
   components: {
     DatePicker,
+    // DatePickerTime,
   },
   props: {
     ticket: {
@@ -138,6 +152,9 @@ export default {
     };
   },
   methods: {
+    newTimeValue(value) {
+      this.ticket.time = value;
+    },
     newDateValue(value) {
       this.ticket.date = value;
     },

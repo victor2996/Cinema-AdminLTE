@@ -7,12 +7,32 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
+    // Auth page
+    {
+      path: "/login",
+      name: "Login.vue",
+      meta: { layout: "auth" },
+      component: () => import("@/components/authPages/Login.vue"),
+    },
+    {
+      path: "/registr",
+      name: "Registr.vue",
+      meta: { layout: "auth" },
+      component: () => import("@/components/authPages/Registr.vue"),
+    },
+
     // User pages
     {
       path: "/",
       name: "Home",
       meta: { layout: "main" },
       component: () => import("@/components/mainPages/home/Home.vue"),
+    },
+    {
+      path: "/user",
+      name: "User",
+      meta: { layout: "main" },
+      component: () => import("@/components/mainPages/user/User.vue"),
     },
     {
       path: "/poster",
